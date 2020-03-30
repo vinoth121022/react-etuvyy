@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-//require('./style.css');
+require('../style.css');
 export default class Button extends React.Component {
   static propTypes = {
     name: PropTypes.string,
     orange: PropTypes.bool,
-  //  wide: PropTypes.bool,
+     wide: PropTypes.bool,
     clickHandler: PropTypes.func,
+    random: PropTypes.integer,
   };
-
+  
   handleClick = () => {
     this.props.clickHandler(this.props.name);
   };
@@ -17,7 +18,7 @@ export default class Button extends React.Component {
     const className = [
       "component-button",
       this.props.orange ? "orange" : "",
-      //this.props.wide ? "wide" : "",
+      this.props.wide ? "wide" : "",
     ];
 
     return (
