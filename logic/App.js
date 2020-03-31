@@ -7,13 +7,11 @@ import PropTypes from "prop-types";
 
 export default class App extends React.Component {
 state = {
-    total: null,
-    next: null,
-    operation: null,
+    random :null
   };
-   getCode(props){
-     console.log(Math.floor((Math.random() * 10000000) + 1));
-     props.random= Math.floor((Math.random() * 10000000) + 1);
+  
+   getCode=()=>{ 
+      this.setState({random : Math.floor((Math.random() * 10000000) + 1)});
   }
   
 render () {
@@ -23,7 +21,7 @@ render () {
      <Tabs>
       <div  label="Create Room" id="create_Room">
          <Button name="Generate Code" clickHandler={this.getCode}></Button><br/>
-          --<em>{this.props.random}</em>--
+          --<em>{this.state.random}</em>--
       </div>
       <div label="Join Room">
         After 'while, <em>Crocodile</em>!
