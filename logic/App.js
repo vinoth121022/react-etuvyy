@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from "react-dom";
 import Tabs from '../comp/Tabs';
 import Button from '../comp/Buttons';
+import Input from '../comp/Textbox';
 require('../style.css');
 import PropTypes from "prop-types";
 
@@ -24,7 +25,9 @@ render () {
           --<em>{this.state.random}</em>--
       </div>
       <div label="Join Room">
-        After 'while, <em>Crocodile</em>!
+        <em>Enter Room CODE</em>!
+       <br/> <Input name="Generate Code" ></Input><br/>
+        <Button name="Join" ></Button><br/>
       </div>
     </Tabs>
     </div>
