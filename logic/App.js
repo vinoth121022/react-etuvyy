@@ -26,7 +26,7 @@ render () {
       </div>
       <div label="Join Room">
         <em>Enter Room CODE</em>!
-       <br/> <Input name="Generate Code" ></Input><br/>
+       <br/> <Input onChange={ } ></Input><br/>
         <Button name="Join" ></Button><br/>
       </div>
     </Tabs>
