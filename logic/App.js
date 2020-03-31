@@ -18,7 +18,7 @@ state = {
 render () {
   return (
     <div>
-      <em><h1>Literature</h1></em>
+      <center><em><h1 >Literature</h1></em></center>
      <Tabs>
       <div  label="Create Room" id="create_Room">
          <Button name="Generate Code" clickHandler={this.getCode}></Button><br/>
