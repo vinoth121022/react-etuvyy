@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from "react-dom";
 import Tabs from '../comp/Tabs';
 import Button from '../comp/Buttons';
-require('../styles.css');
+require('../style.css');
 import PropTypes from "prop-types";
 
 export default class App extends React.Component {
