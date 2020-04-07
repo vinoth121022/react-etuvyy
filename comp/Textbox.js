@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 require('../style.css');
 export default class Button extends React.Component {
 
- 
+ constructor(props){
+   super(props);
+
+ }
 
   onChange = () => {
     this.props.onChange(this.props.name);
@@ -16,6 +19,7 @@ export default class Button extends React.Component {
 
     return (
       <div className={className.join(" ").trim()}>
+        <label value={}>{this.props.value} : </label>
         <input type="text" inputProps={{ 'aria-label': 'description' }}  onChange={this.handleChange}></input>
       </div>
     );

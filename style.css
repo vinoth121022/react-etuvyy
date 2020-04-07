@@ -1,6 +1,13 @@
 h1, p {
   font-family: Lato;
-  color : orange;
+  color : rgb(7, 0, 105);
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 10rem;
+  margin-right: 0;
+  font-weight: bold;
 }
 .tab-list {
   border-bottom: 1px solid #ccc;
@@ -36,6 +43,10 @@ h1, p {
   margin: 0 1px 0 0;
   flex: 1 0 auto;
   padding: 5;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 10rem;
+  margin-right: 0;
 }
 
 .component-button:last-child button {

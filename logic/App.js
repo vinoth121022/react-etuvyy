@@ -21,13 +21,13 @@ render () {
       <center><em><h1 >Literature</h1></em></center>
      <Tabs>
       <div  label="Create Room" id="create_Room">
-         <Button name="Generate Code" clickHandler={this.getCode}></Button><br/>
+         <Button value="Generate Code" clickHandler={this.getCode}></Button><br/>
           --<em>{this.state.random}</em>--
       </div>
-      <div label="Join Room">
+      <div label="Join Room">s
         <em>Enter Room CODE</em>!
        <br/> <Input onChange={ } ></Input><br/>
-        <Button name="Join" ></Button><br/>
+        <Button value="Join" ></Button><br/>
       </div>
     </Tabs>
     </div>
