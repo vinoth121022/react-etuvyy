@@ -2,8 +2,36 @@ import React from "react";
 
 export default class DataTable extends React.Component{
 
-  constructor(props){
+ constructor(props) {
     super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      myGuestDtoList: [],
+      response:null
+    };
+  }
+
+  componentDidMount() { 
+    fetch("http://localhost:8899/myguestscontroller/getAll")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          alert(this.state.response);
+          this.setState({
+            isLoaded: true,
+            myGuestDtoList: result.myGuestDtoList,
+            response:result.result
+          });
+        },
+        (error) => {
+          alert(this.state.response);
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
   }
    buildTable() {
   var table = document.getElementById("dataTable");
