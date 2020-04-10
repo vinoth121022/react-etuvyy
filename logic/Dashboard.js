@@ -13,8 +13,10 @@ render (){
   return(
   <div>
     <h1>USAA Insurance</h1>
-    <Input value="Name" ></Input>
-    <Button value="Search"/>
+    <Input value="UserName" ></Input><br/>
+    <Input value="Password" ></Input>
+    <Button value="login"/>
+    <Button value="sign up"/>
   </div>
   );
 }

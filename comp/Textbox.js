@@ -5,11 +5,15 @@ export default class Button extends React.Component {
 
  constructor(props){
    super(props);
+    this.state = {
+      error: null,
+      value:null
+    };
 
  }
 
   onChange = () => {
-    this.props.onChange(this.props.name);
+    this.setState({value: event.target.value});
   };
 
   render() {

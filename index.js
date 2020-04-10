@@ -10,4 +10,4 @@ require('./style.css');
 
 const container = document.createElement('div');
 document.body.appendChild(container);
-render(<TButton/>, container);
+render(<Dash/>, container);
