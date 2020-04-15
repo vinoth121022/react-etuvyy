@@ -13,12 +13,12 @@ export default class Button extends React.Component {
  }
 
   handleChange = (event) => {
-    this.setState({value: event.target.value});
+    this.props.getCode(event.target.value);
   };
 
   render() {
     const className = [
-      "component-input",
+      "component-input", 
     ];
 
     return (

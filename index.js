@@ -6,6 +6,7 @@ import Button from './comp/Buttons';
 import TButton from './comp/TButton';
 import App from './logic/App';
 import Dash from './logic/Dashboard';
+import MyForm from './comp/Form';
 require('./style.css');
 
 const container = document.createElement('div');

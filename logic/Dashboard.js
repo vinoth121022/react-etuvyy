@@ -5,17 +5,42 @@ import Input from '../comp/Textbox';
 require('../style.css');
 export default class Dashboard extends React.Component{
 
-getValue(i){
+ constructor(props){
+   super(props);
+    this.state = {
+      error: null,
+      userName:null,
+      password:null,
+      response:null,
+    };
+ }
 
-}
-
+  validateUser=()=>{
+    
+     const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: this.state.userName,
+        password:this.state.password })
+    };
+     fetch("http://localhost:8899/usercontroller/validate",requestOptions
+     ).then(response => response.json())
+        .then(data =>{this.setState({ response: data.response })
+        alert("check "+this.state.response)} );
+  }
+  setUsername=(x)=>{ 
+      this.setState({userName : x});
+  }
+  setpassword=(x)=>{ 
+      this.setState({password : x});
+  }
 render (){
   return(
   <div>
-    <h1>USAA Insurance</h1>
-    <Input value="UserName" ></Input><br/>
-    <Input value="Password" ></Input>
-    <Button value="login"/>
+    <h1>USAA Insurance </h1>
+    <Input value="UserName" getCode={this.setUsername}></Input><br/>
+    <Input value="Password" getCode={this.setpassword}></Input>
+    <Button value="login" handleClick={this.validateUser}/>
     <Button value="sign up"/>
   </div>
   );
