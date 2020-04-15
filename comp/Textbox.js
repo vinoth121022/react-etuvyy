@@ -12,7 +12,7 @@ export default class Button extends React.Component {
 
  }
 
-  onChange = () => {
+  handleChange = (event) => {
     this.setState({value: event.target.value});
   };
 
@@ -24,7 +24,7 @@ export default class Button extends React.Component {
     return (
       <div className={className.join(" ").trim()}>
         <label value={}>{this.props.value} : </label>
-        <input type="text" inputProps={{ 'aria-label': 'description' }}  onChange={this.handleChange}></input>
+        <input type="text"  onChange={this.handleChange}></input>
       </div>
     );
   }
