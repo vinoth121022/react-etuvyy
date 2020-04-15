@@ -24,7 +24,7 @@ export default class Button extends React.Component {
     return (
       <div className={className.join(" ").trim()}>
         <label value={}>{this.props.value} : </label>
-        <input type="text"  onChange={this.handleChange}></input>
+        <input type={this.props.type}  onChange={this.handleChange}></input>
       </div>
     );
   }

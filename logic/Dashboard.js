@@ -38,9 +38,9 @@ render (){
   return(
   <div>
     <h1>USAA Insurance </h1>
-    <Input value="UserName" getCode={this.setUsername}></Input><br/>
-    <Input value="Password" getCode={this.setpassword}></Input>
-    <Button value="login" handleClick={this.validateUser}/>
+    <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
+    <Input type="password" value="Password" getCode={this.setpassword}></Input>
+    <Button value="login" handleClick={this.validateUser} />
     <Button value="sign up"/>
   </div>
   );
