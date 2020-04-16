@@ -7,8 +7,10 @@ import TButton from './comp/TButton';
 import App from './logic/App';
 import Dash from './logic/Dashboard';
 import MyForm from './comp/Form';
+import Register from './comp/SignupForm';
+import Route from './logic/Router';
 require('./style.css');
 
 const container = document.createElement('div');
 document.body.appendChild(container);
-render(<Dash/>, container);
+render(<Route/>, container);
