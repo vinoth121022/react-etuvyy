@@ -1,46 +1,45 @@
-import React from 'react';
+import React from "react";
 import { render } from "react-dom";
 
-import Tabs from '../comp/Tabs';
-import Button from '../comp/Buttons';
-import TButton from '../comp/TButton';
-import App from '../logic/App';
-import Dash from '../logic/Dashboard';
-import MyForm from '../comp/Form';
-import Register from '../comp/SignupForm';
-require('../style.css');
+import Tabs from "../comp/Tabs";
+import Button from "../comp/Buttons";
+import TButton from "../comp/TButton";
+import App from "../logic/App";
+import Dashboard from "../logic/Dashboard";
+import MyForm from "../comp/Form";
+import Register from "../comp/SignupForm";
+require("../style.css");
+import PropTypes from 'prop-types';
 
-export default class Route extends React.Component{
-
-  constructor(props){
-   super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
- }
-
-handleLoginClick() {
-    this.setState({isLoggedIn: true});
+export default class Route extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoggedIn: false };
   }
+ 
+  stateFunction=()=>{
+    console.log("HAI");
+    if (this.state.isLoggedIn) {
+      this.setState({ isLoggedIn: false });
+    } else {
+      this.setState({ isLoggedIn: true });
+    }
+  };
 
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
-  }
-render (){
-  const isLoggedIn = this.state.isLoggedIn;
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
     let button;
     if (isLoggedIn) {
-      button = <Register handleClick={this.handleLogoutClick} />;
+      button = <Register />;
     } else {
-      button = <Dash handleClick={this.handleLoginClick} />;
+      button = <Dashboard  />;
     }
 
     return (
       <div>
         {button}
+        <button onClick={this.stateFunction} >Navigate</button>
       </div>
     );
-  
-}
-  
+  }
 }
