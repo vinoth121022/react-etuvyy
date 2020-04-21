@@ -17,10 +17,11 @@ export default class Dashboard extends React.Component{
     };
    
  }
+  
 
    routeComps = () => {
     alert("Calling");
-    
+    <Route onClick={this.props.stateFunction}/>
   };
 
   validateUser=()=>{
@@ -49,7 +50,7 @@ render (){
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
     <Button value="login" handleClick={this.validateUser} />
-    <Button value="sign up" handleClick={this.props.stateFunction}/><br/>
+    <Button value="sign up" handleClick={this.routeComps}/><br/>
      
   </div>
   );
