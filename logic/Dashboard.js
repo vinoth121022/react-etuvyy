@@ -4,7 +4,7 @@ import Button from '../comp/Buttons';
 import Input from '../comp/Textbox';
 import Route from '../logic/Router';
 require('../style.css');
-import { BrowserRouter, Route, Switch,Link} from 'react-router-dom';
+import { BrowserRouter, Route, Switch,Link,Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 export default class Dashboard extends React.Component{
 
@@ -26,7 +26,10 @@ export default class Dashboard extends React.Component{
   };
 
   validateUser=()=>{
-    
+    console.log("here Iam ");
+   
+    <Redirect push to="/signupForm" />
+
      const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -37,6 +40,7 @@ export default class Dashboard extends React.Component{
      ).then(response => response.json())
         .then(data =>{this.setState({ response: data.response })
         alert("check "+this.state.response)} );
+        
   }
   setUsername=(x)=>{ 
       this.setState({userName : x});
