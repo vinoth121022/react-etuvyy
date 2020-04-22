@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import Button from '../comp/Buttons';
 import Input from '../comp/Textbox';
 import Route from '../logic/Router';
-require('../style.css');
+require('../style.css');import { BrowserRouter, Route, Switch,Link} from 'react-router-dom';
 export default class RegisterUser extends React.Component{
 
  constructor(props){
@@ -61,7 +61,7 @@ render (){
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
     <Button value="Register" handleClick={this.callRest} />
-    <Button value="Login"/>
+    <Link to="/dashboard">Login </Link>
   </div>
   );
 }

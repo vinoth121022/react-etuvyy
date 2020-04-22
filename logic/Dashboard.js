@@ -4,6 +4,7 @@ import Button from '../comp/Buttons';
 import Input from '../comp/Textbox';
 import Route from '../logic/Router';
 require('../style.css');
+import { BrowserRouter, Route, Switch,Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 export default class Dashboard extends React.Component{
 
@@ -50,8 +51,7 @@ render (){
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
     <Button value="login" handleClick={this.validateUser} />
-    <Button value="sign up" handleClick={this.routeComps}/><br/>
-     
+      <Link to="/signupForm">Sign up </Link>
   </div>
   );
 }

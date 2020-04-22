@@ -1,16 +1,31 @@
 import React from 'react';
 import { render } from "react-dom";
-
-import Tabs from './comp/Tabs';
-import Button from './comp/Buttons';
-import TButton from './comp/TButton';
-import App from './logic/App';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dash from './logic/Dashboard';
-import MyForm from './comp/Form';
 import Register from './comp/SignupForm';
-import Route from './logic/Router';
+import Rout from './logic/Router';
 require('./style.css');
+
+
+
+function App() {
+    return (
+        <main>
+            <Switch>
+                <Route path="/" component={Dash} exact />
+                <Route path="/dashboard" component={Dash} />
+                <Route path="/signupForm" component={Register} />
+            </Switch>
+        </main>
+    )
+}
 
 const container = document.createElement('div');
 document.body.appendChild(container);
-render(<Route/>, container);
+render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>, 
+    container
+)
