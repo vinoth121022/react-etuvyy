@@ -7,7 +7,7 @@ import Register from './comp/SignupForm';
 import StateDashboard from './comp/StateDashboard';
 import Rout from './logic/Router';
 require('./style.css');
-
+import DataTable from'./comp/DataTable';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
                 <Route path="/dashboard" component={Dash} />
                 <Route path="/signupForm" component={Register} />
                 <Route path="/statedashboard" component={StateDashboard} />
+
             </Switch>
         </main>
     )

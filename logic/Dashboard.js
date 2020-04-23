@@ -51,12 +51,12 @@ export default class Dashboard extends React.Component{
 render (){
   return(
   <div>
-    <h1>USAA Insurance </h1>
+    <h1>USAA Insurance Confirm Registration Here</h1>
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
-    <Button value="login" handleClick={this.validateUser} />
-      <Link to="/signupForm">Sign up </Link><br/>
-        <Link to="/statedashboard">State Dashboard </Link>
+    <Button value="Check" handleClick={this.validateUser} />
+      <Link to="/signupForm">Add me </Link><br/>
+        <Link to="/statedashboard">Check Existing Users </Link>
   </div>
   );
 }

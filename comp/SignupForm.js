@@ -61,7 +61,7 @@ render (){
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
     <Button value="Register" handleClick={this.callRest} />
-    <Link to="/dashboard">Login </Link>
+    <Link to="/dashboard">Home </Link>
   </div>
   );
 }

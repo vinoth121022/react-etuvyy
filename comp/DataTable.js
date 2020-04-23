@@ -7,20 +7,20 @@ export default class DataTable extends React.Component{
     this.state = {
       error: null,
       isLoaded: false,
-      myGuestDtoList: [],
+      userDtoList: [],
       response:null
     };
   }
 
   componentDidMount() { 
-    fetch("http://localhost:8899/myguestscontroller/getAll")
+    fetch("http://localhost:8899/usercontroller/getAll")
       .then(res => res.json())
       .then(
         (result) => {
-          alert(this.state.response);
+         // alert(result.response);
           this.setState({
             isLoaded: true,
-            myGuestDtoList: result.myGuestDtoList,
+            userDtoList: result.userDtoList,
             response:result.result
           });
         },
@@ -33,17 +33,26 @@ export default class DataTable extends React.Component{
         }
       )
   }
-   buildTable() {
-  var table = document.getElementById("dataTable");
-  var row = table.insertRow(0);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = "NEW CELL1";
-  cell2.innerHTML = "NEW CELL2";
-}
-  render(){
-    return(
-      <table id="dataTable" ></table>
+   
+  render(){  
+    return( 
+      <table>
+      <tr>
+          <th>FirstName </th>
+          <th>LastName </th>
+          <th>Email </th>
+          </tr>
+      {this.state.userDtoList.map(item => (
+        // Without the `key`, React will fire a key warning
+        <React.Fragment key={item.id}>
+        <tr>
+          <td>{item.firstName}</td>
+          <td>{item.lastName}</td>
+          <td>{item.email}</td>
+          </tr>
+        </React.Fragment>
+      ))}
+    </table>
     );
   }
 }
