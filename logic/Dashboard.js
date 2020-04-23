@@ -55,7 +55,8 @@ render (){
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
     <Button value="login" handleClick={this.validateUser} />
-      <Link to="/signupForm">Sign up </Link>
+      <Link to="/signupForm">Sign up </Link><br/>
+        <Link to="/statedashboard">State Dashboard </Link>
   </div>
   );
 }
