@@ -36,7 +36,9 @@ export default class DataTable extends React.Component{
    
   render(){  
     return( 
+        <fieldset>
       <table>
+      
       <tr>
           <th>FirstName </th>
           <th>LastName </th>
@@ -53,6 +55,7 @@ export default class DataTable extends React.Component{
         </React.Fragment>
       ))}
     </table>
+    </fieldset>
     );
   }
 }
