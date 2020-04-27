@@ -9,6 +9,18 @@ h1, p {
   margin-right: 0;
   font-weight: bold;
 }
+h2 {
+  font-family: Lato;
+  color : rgb(248, 182, 0);
+  font-style: italic,bold;
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 10rem;
+  margin-right: 0;
+  font-weight: bold;
+}
 .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;

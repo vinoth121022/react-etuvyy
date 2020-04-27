@@ -1,6 +1,9 @@
 import React from 'react';
-
-export default class Premimum extends React,Component{
+import DropDown from "../comp/DropDown";
+import Textbox from "../comp/Textbox";
+import DataTable from "../comp/DataTable";
+import Dashboard from "../logic/Dashboard";
+export default class Premimum extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -19,20 +22,36 @@ export default class Premimum extends React,Component{
         (result) => {
          // alert(result.response);
           this.setState({
-            isLoaded: true,
+            isIOTenabled: true,
             stateList: result.stateDtoList,
-            response:result.result
+            response:result.response
           });
         },
         (error) => {
           alert(this.state.response);
           this.setState({
-            isLoaded: true,
+            isIOTenabled: true,
             error
           });
         }
       )
   }
 
+  render()
+  {
+    return(
+      <div >
+      <h1>USSA-Renters</h1>
+      <h2>Choose your Premimum Here </h2>
+      
+      <DropDown valueForList={this.state.stateList} label="State "/>
+     
+       <DropDown valueForList={this.state.stateList} label="City "/>
+       <Textbox value="Policy Number" />
+        <Textbox value="Policy Holder Name "/><br/>
+        <DataTable/>
+       </div>
+    )
+  }
 
 }
