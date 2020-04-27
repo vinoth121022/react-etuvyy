@@ -3,7 +3,8 @@ import DropDown from "../comp/DropDown";
 import Textbox from "../comp/Textbox";
 import DataTable from "../comp/DataTable";
 import Dashboard from "../logic/Dashboard";
-export default class Premimum extends React.Component{
+import { BrowserRouter, Route, Switch,Link} from 'react-router-dom';
+export default class Premium extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -50,6 +51,7 @@ export default class Premimum extends React.Component{
        <Textbox value="Policy Number" />
         <Textbox value="Policy Holder Name "/><br/>
         <DataTable/>
+        <Link to="/dashboard">Home </Link>
        </div>
     )
   }

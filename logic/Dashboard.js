@@ -54,8 +54,9 @@ render (){
     <h1>USAA Insurance Confirm Registration Here</h1>
     <Input type="text" value="UserName" getCode={this.setUsername}></Input><br/>
     <Input type="password" value="Password" getCode={this.setpassword}></Input>
-    <Button value="Check" handleClick={this.validateUser} />
+    <Button value="Check" handleClick={this.validateUser} /><br/>
       <Link to="/signupForm">Add me </Link><br/>
+      <Link to="/premium">Check Premium beta 1.0.1 version(Under Development)</Link><br/>
         <Link to="/statedashboard">Check Existing Users </Link>
   </div>
   );
