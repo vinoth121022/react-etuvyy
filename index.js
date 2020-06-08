@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { render } from "react-dom";
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -9,6 +10,8 @@ import StateDashboard from './comp/StateDashboard';
 import Rout from './logic/Router';
 require('./style.css');
 import DataTable from'./comp/DataTable';
+
+
 
 
 function App() {
