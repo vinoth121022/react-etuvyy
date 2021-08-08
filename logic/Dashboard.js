@@ -6,6 +6,7 @@ import Route from '../logic/Router';
 require('../style.css');
 import { BrowserRouter, Route, Switch,Link,Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 export default class Dashboard extends React.Component{
 
  constructor(props){
