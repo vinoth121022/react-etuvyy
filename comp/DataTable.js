@@ -17,7 +17,6 @@ export default class DataTable extends React.Component {
       .then(res => res.json())
       .then(
         result => {
-          alert(result.body);
           this.setState({
             isLoaded: true,
             userDtoList: result.body,
