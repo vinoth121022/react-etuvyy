@@ -15,14 +15,12 @@ export default class RegisterUser extends React.Component {
     this.state = {
       error: null,
       patientName: null,
-      passWord: null,
       response: null,
-      firstName: null,
       gender: null,
-      email: null,
       dob: null,
       appointmentDate: null,
-      phoneNumber: null
+      phoneNumber: null,
+      age: null
     };
   }
 
@@ -31,39 +29,28 @@ export default class RegisterUser extends React.Component {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        userName: this.state.userName,
-        passWord: this.state.passWord,
-        firstName: this.state.firstName,
+        patientName: this.state.patientName,
         gender: this.state.gender,
-        email: this.state.email,
         dob: this.state.dob,
-        AppointmentDate: this.state.appointmentDate,
-        phoneNumber: this.state.phoneNumber
+        appointmentDate: this.state.appointmentDate,
+        phoneNumber: this.state.phoneNumber,
+        age: this.state.age
       })
     };
 
-    fetch('http://localhost:4000/insertMenu/add', requestOptions)
+    console.log('requestOptions', requestOptions);
+
+    fetch('http://localhost:4000/insertPatient', requestOptions)
       .then(response => response.json())
       .then(data => {
+        console.log('requestOptions', requestOptions);
         this.setState({ response: data.response });
         alert('check ' + this.state.response);
       });
   };
 
-  setUsername = x => {
-    this.setState({ userName: x });
-  };
-  setpassword = x => {
-    this.setState({ passWord: x });
-  };
-  setFirstname = x => {
-    this.setState({ firstName: x });
-  };
   setGender = x => {
     this.setState({ gender: x });
-  };
-  setEmail = x => {
-    this.setState({ email: x });
   };
 
   setDOB = x => {
@@ -71,7 +58,7 @@ export default class RegisterUser extends React.Component {
   };
 
   setAppointmentDate = x => {
-    this.setState({ dob: x });
+    this.setState({ appointmentDate: x });
   };
 
   setPhoneNumber = x => {
@@ -82,42 +69,43 @@ export default class RegisterUser extends React.Component {
     this.setState({ patientName: x });
   };
 
+  setAge = x => {
+    this.setState({ age: x });
+  };
+
   render() {
     return (
       <div>
         <h1>Patient Details</h1>
-        <form id="">
-          <Input type="text" value="PatientName" getCode={this.setFirstname} />
-          <br />
 
-          <RadioButton
-            type="radio"
-            value="Gender : Male"
-            getCode={this.setGender}
-          />
-          <RadioButton type="radio" value="Female" getCode={this.setGender} />
-          <br />
-          <Input type="date" value="DOB" getCode={this.setDOB} />
-          <br />
-          <Input type="text" value="Age" getCode={this.setUsername} />
-          <br />
-          <Dropdown valueDropdown="Years" />
-          <br />
-          <Input type="date" value="Appointment Date" getCode={this.setDOB} />
-          <br />
-          <Input
-            type="text"
-            value="PhoneNumber"
-            getCode={this.setPhoneNumber}
-          />
-          <br />
+        <Input type="text" value="PatientName" getCode={this.setPatientName} />
+        <br />
 
-          <DataTable />
+        <RadioButton
+          type="radio"
+          value="Gender : Male"
+          getCode={this.setGender}
+        />
+        <RadioButton type="radio" value="Female" getCode={this.setGender} />
+        <br />
+        <Input type="date" value="DOB" getCode={this.setDOB} />
+        <br />
+        <Input type="text" value="Age" getCode={this.setAge} />
+        <br />
+        <Dropdown valueDropdown="Years" />
+        <br />
+        <Input
+          type="date"
+          value="Appointment Date"
+          getCode={this.setAppointmentDate}
+        />
+        <br />
+        <Input type="text" value="PhoneNumber" getCode={this.setPhoneNumber} />
+        <br />
 
-          <Button value="Register" handleClick={this.callRest} />
+        <Button value="Register" handleClick={this.callRest} />
 
-          <Link to="/dashboard">Login </Link>
-        </form>
+        <Link to="/dashboard">Login </Link>
       </div>
     );
   }
