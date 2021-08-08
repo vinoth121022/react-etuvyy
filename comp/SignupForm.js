@@ -102,10 +102,11 @@ export default class RegisterUser extends React.Component {
         <br />
         <Input type="text" value="PhoneNumber" getCode={this.setPhoneNumber} />
         <br />
-
         <Button value="Register" handleClick={this.callRest} />
 
         <Link to="/dashboard">Login </Link>
+
+        <DataTable />
       </div>
     );
   }

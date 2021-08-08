@@ -1,49 +1,66 @@
-import React from "react";
+import React from 'react';
 
-export default class DataTable extends React.Component{
-
- constructor(props) {
+export default class DataTable extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      myGuestDtoList: [],
-      response:null
+      userDtoList: [],
+      response: null
     };
   }
 
-  componentDidMount() { 
-    fetch("http://localhost:8899/myguestscontroller/getAll")
+  componentDidMount() {
+    console.log('DataTable', DataTable);
+    fetch('http://localhost:4000/getPatient')
       .then(res => res.json())
       .then(
-        (result) => {
-          alert(this.state.response);
+        result => {
+          alert(result.body);
           this.setState({
             isLoaded: true,
-            myGuestDtoList: result.myGuestDtoList,
-            response:result.result
+            userDtoList: result.body,
+            response: result.result
           });
         },
-        (error) => {
+        error => {
           alert(this.state.response);
           this.setState({
             isLoaded: true,
             error
           });
         }
-      )
+      );
   }
-   buildTable() {
-  var table = document.getElementById("dataTable");
-  var row = table.insertRow(0);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = "NEW CELL1";
-  cell2.innerHTML = "NEW CELL2";
-}
-  render(){
-    return(
-      <table id="dataTable" ></table>
+
+  render() {
+    return (
+      <fieldset>
+        <table>
+          <tr>
+            <th>Name </th>
+            <th>Gender </th>
+            <th>Dob </th>
+            <th>Phone </th>
+            <th>Appointment Date </th>
+            <th>Age </th>
+          </tr>
+          {this.state.userDtoList.map(item => (
+            // Without the `key`, React will fire a key warning
+            <React.Fragment key={item.id}>
+              <tr>
+                <td>{item.name}</td>
+                <td>{item.gender}</td>
+                <td>{item.dob}</td>
+                <td>{item.phone}</td>
+                <td>{item.appointmentDate}</td>
+                <td>{item.age}</td>
+              </tr>
+            </React.Fragment>
+          ))}
+        </table>
+      </fieldset>
     );
   }
 }
